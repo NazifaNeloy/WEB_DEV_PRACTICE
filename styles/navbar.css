@@ -1,0 +1,99 @@
+/* --- LOGO STYLES --- */
+.logo img {
+    /* WHY: If we don't set a height, the image might be huge (original size).
+       40px is a standard height for navbar logos. */
+    height: 40px; 
+    
+    /* WHY: 'auto' keeps the aspect ratio correct so the logo doesn't look squished. */
+    width: auto; 
+    
+    /* WHY: Images are "inline" by default, which adds a tiny 4px "ghost space" 
+       at the bottom (reserved for letters like 'y' or 'g'). 
+       'block' removes this invisible gap. */
+    display: block; 
+}
+
+/* --- MAIN CONTAINER (THE NAVBAR) --- */
+.top-navbar {
+    /* WHY: We use Grid instead of Flexbox here because Grid allows for 
+       precise 3-column layouts where the center is PERFECTLY in the middle,
+       even if the left logo and right button are different sizes. */
+    display: grid;
+    
+    /* WHY: This is the "Magic Formula" for centering:
+       - 1fr (Left): Take up all available space on the left.
+       - auto (Center): Shrink to fit the menu exactly.
+       - 1fr (Right): Take up all available space on the right.
+       Since Left (1fr) and Right (1fr) are equal, the Center (auto) stays exactly in the middle. */
+    grid-template-columns: 1fr auto 1fr;
+    
+    /* WHY: Vertically centers items so the logo, text, and button align 
+       on the same horizontal line. */
+    align-items: center;
+    
+    /* WHY: Adds breathing room so content isn't stuck to the edge of the screen. */
+    padding: 15px 30px;
+    
+    background-color: white;
+}
+
+/* --- CENTER MENU --- */
+.menu {
+    /* WHY: We use Flexbox here because we just want a simple row of items side-by-side. */
+    display: flex;
+    
+    /* WHY: Adds consistent space (30px) between "Features", "How it works", etc. */
+    gap: 30px;
+    
+    /* WHY: Removes the default bullet points (•) from the list. */
+    list-style: none;
+    
+    /* WHY: Browser lists (<ul>) have default padding/margin. We remove it to have full control. */
+    padding: 0;
+    margin: 0;
+}
+
+.menu a {
+    /* WHY: Removes the default blue underline from links. */
+    text-decoration: none;
+    color: black;
+}
+
+/* --- RIGHT BUTTON CONTAINER --- */
+.cta-btn {
+    /* WHY: This is a Grid-specific property. It forces this specific item (the button wrapper)
+       to push all the way to the END (Right) of its column. 
+       Without this, the button would float near the menu. */
+    justify-self: end;
+}
+
+/* --- BUTTON STYLING --- */
+.btn {
+    /* WHY: Defines the box around the button. */
+    border: 2px solid black;
+    
+    /* WHY: Adds space inside the button (Top/Bottom: 10px, Left/Right: 20px). */
+    padding: 10px 20px;
+    
+    /* WHY: Rounds the corners slightly for a modern look. */
+    border-radius: 5px;
+    
+    /* WHY: Ensures the text inside the button doesn't have an underline. */
+    text-decoration: none;
+    
+    /* WHY: Links are blue by default. We must force it to black. */
+    color: black;
+    
+    font-weight: bold;
+    
+    /* WHY: When we hover, the color change will take 0.3 seconds instead of 
+       happening instantly. It makes it feel smoother/more premium. */
+    transition: 0.3s;
+}
+
+/* --- HOVER EFFECT --- */
+.btn:hover {
+    /* WHY: Inverts the colors when the user moves the mouse over the button. */
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
