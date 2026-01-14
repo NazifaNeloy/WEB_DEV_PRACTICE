@@ -1,0 +1,93 @@
+/* --- 1. THE OUTSIDE WORLD (White Background) --- */
+body {
+    background-color: #ffffff; /* White page background */
+    margin: 0;
+}
+
+.what_i_do {
+    background-color: #ffffff; /* Double check: Section background is white */
+    padding: 60px 20px;        /* Adds space around the Oyster box */
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* --- 2. THE OYSTER BOX (The Container) --- */
+.container {
+    /* OYSTER COLOR HEX CODE: Change #F0EAD6 to whatever shade you prefer */
+    background-color: #fdf9ee; 
+    
+    /* Box Styling */
+    border-radius: 30px;       /* Rounds the corners of the oyster box */
+    padding: 50px;             /* Space inside the oyster box (away from edge) */
+    
+    /* Centering and Sizing */
+    max-width: 1400px;         
+    margin: 0 auto;            /* Centers the box in the middle of the white page */
+}
+
+/* --- 3. HEADER TEXT INSIDE THE BOX --- */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #181818;
+}
+
+.section-header p {
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- 4. THE FLEX ROW (Holds the 4 cards) --- */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap;         /* Forces 4 cards on one line */
+    overflow-x: auto;          /* Scrollbar safety for mobile */
+}
+
+/* --- 5. THE WHITE CARDS INSIDE THE OYSTER BOX --- */
+.cards {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    
+    background: #ffffff;       /* Cards remain white to contrast with Oyster */
+    border-radius: 15px;       /* Slightly rounder cards to match the oyster box */
+    box-shadow: 0px 6px 50px rgba(0, 0, 0, 0.06);
+    
+    padding: 30px 20px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.cards:hover {
+    transform: translateY(-5px);
+}
+
+/* --- 6. ICONS & TEXT --- */
+.icon img {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+.cards h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.cards p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
